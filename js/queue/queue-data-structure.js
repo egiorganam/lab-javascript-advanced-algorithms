@@ -5,22 +5,31 @@ class QueueDataStructure {
   }
 
   display() {
-    // ... your code goes here
+    return this.queueControl
   }
 
   canEnqueue() {
-    // ... your code goes here
+    return this.queueControl.length == this.MAX_SIZE ? false : true
   }
 
   isEmpty() {
-    // ... your code goes here
+    return this.queueControl.length > 0 ? false : true
   }
 
   enqueue(item) {
-    // ... your code goes here
+    if(this.queueControl.length === this.MAX_SIZE){
+      return 'Queue Overflow'
+    }else{
+      this.queueControl.unshift(item)
+      return this.queueControl
+    } 
   }
 
   dequeue() {
-    // ... your code goes here
+    if(this.queueControl.length === 0){
+      return 'Queue Underflow'
+    }else{
+      return this.queueControl.pop()
+    }
   }
 }
